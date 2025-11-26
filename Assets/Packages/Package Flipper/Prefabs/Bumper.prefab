@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.3, y: 0, z: -0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.3, y: 0.30000007, z: 0.30000007}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc19560159321984eb41b83e14205f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 4
-  scoreToAdd: 10
+  strength: 5
+  scoreToAdd: 20
   anim: {fileID: 4678280911482762533}
 --- !u!111 &4678280911482762533
 Animation:
@@ -136,9 +136,9 @@ Animation:
   m_GameObject: {fileID: 6531604572025502312}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: a82e8a430f9758c44a268a397ff58e14, type: 2}
+  m_Animation: {fileID: 7400000, guid: 42422009da092564d95c6b98134a94f2, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: a82e8a430f9758c44a268a397ff58e14, type: 2}
+  - {fileID: 7400000, guid: 42422009da092564d95c6b98134a94f2, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
