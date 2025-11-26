@@ -14,9 +14,9 @@ public class Trampoline : MonoBehaviour
             Rigidbody rb  =  other.GetComponent<Rigidbody>();
             Vector3   dir = (bounceDirection.transform.position - transform.position).normalized;
             rb.AddForce(dir * strength, ForceMode.Impulse);   
+            anim.Play();
         }
 
         ScoreManager.instance.AddScore(scoreToAdd);
-        //anim.Play();
     }
 }

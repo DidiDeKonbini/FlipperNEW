@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 9053791328911613281}
   - component: {fileID: 6241185815990822875}
   - component: {fileID: 4808866120465434336}
+  - component: {fileID: 4339784655180531575}
   m_Layer: 0
   m_Name: Accelerator
   m_TagString: Untagged
@@ -263,7 +264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ccb795f9196f24cb3ef727683365b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 200
+  strength: 400
+  anim: {fileID: 4339784655180531575}
 --- !u!65 &4808866120465434336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -285,3 +287,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: -1.16, y: -0.01, z: -3.6}
+--- !u!111 &4339784655180531575
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198299428692354688}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: f6541de88eed55c4e9f935e5c0c08048, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: f6541de88eed55c4e9f935e5c0c08048, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
