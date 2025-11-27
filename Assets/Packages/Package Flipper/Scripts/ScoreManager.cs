@@ -5,7 +5,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public TextMeshProUGUI scoreText;
-    public int             score;
+    public float             score;
 
     void Awake()
     {
@@ -17,9 +17,15 @@ public class ScoreManager : MonoBehaviour
         RefreshText();
     }
 
-    public void AddScore(int scoreToAdd)
+    public void AddScore(float scoreToAdd)
     {
         score += scoreToAdd;
+        RefreshText();
+    }
+    
+    public void MultiplyScore(float multiplier)
+    {
+        score += (score * multiplier);
         RefreshText();
     }
     
