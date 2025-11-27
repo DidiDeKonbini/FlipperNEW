@@ -1,10 +1,13 @@
 using System.Collections;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public KeyCode  key = KeyCode.E;
-    public GameObject explosion;
+    public           KeyCode     key = KeyCode.E;
+    [SerializeField] GameObject  explosion;
+    [SerializeField] MMFeedbacks anim;
+
 
     void Update()
     {
@@ -12,6 +15,7 @@ public class Explosion : MonoBehaviour
         {
             explosion.SetActive(true);
             StartCoroutine(ExplosionCoroutine());
+            anim?.PlayFeedbacks();
         }
     }
 
@@ -20,5 +24,7 @@ public class Explosion : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         explosion.SetActive(false);
         GameManager.instance.LoseBall(gameObject);
+
     }
+    
 }
