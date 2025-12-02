@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager instance;
-    public TextMeshProUGUI scoreText;
-    public float             score;
+    public static ScoreManager    instance;
+    public        TextMeshProUGUI scoreText;
+    public        float           score;
+    public        GameObject      scorePopUpPrefab;
 
     void Awake()
     {
@@ -25,7 +26,7 @@ public class ScoreManager : MonoBehaviour
     
     public void MultiplyScore(float multiplier)
     {
-        score += (score * multiplier);
+        score = (score * multiplier);
         RefreshText();
     }
     

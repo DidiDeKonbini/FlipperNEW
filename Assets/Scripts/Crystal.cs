@@ -11,7 +11,7 @@ public class Crystal : MonoBehaviour
         Vector3 direction = other.transform.position - transform.position;
         other.rigidbody.AddForce(direction.normalized * strength, ForceMode.Impulse);
 
-        ScoreManager.instance.AddScore(multiplier);
+        ScoreManager.instance.MultiplyScore(multiplier);
         anim.Play();
     }
 }

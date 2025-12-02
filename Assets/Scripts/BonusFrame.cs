@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BunusFrame : MonoBehaviour
@@ -9,5 +10,14 @@ public class BunusFrame : MonoBehaviour
     {
         ScoreManager.instance.AddScore(scoreToAdd);
         anim.Play();
+        StartCoroutine(popUp());
+    }
+
+    private IEnumerator popUp()
+    {
+        GameObject save = Instantiate(ScoreManager.instance.scorePopUpPrefab, transform.position, Quaternion.identity);
+        save.GetComponent<ScorePopUp>().UpdateScore(scoreToAdd);
+        yield return new WaitForSeconds(1f);
+        Destroy(save);
     }
 }

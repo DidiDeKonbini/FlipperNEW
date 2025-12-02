@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Accelerator : MonoBehaviour
@@ -7,12 +8,21 @@ public class Accelerator : MonoBehaviour
     [SerializeField] Animation anim;
     void OnTriggerEnter(Collider other)
     {
-        Poussée(other.attachedRigidbody);
+        Push(other.attachedRigidbody);
         ScoreManager.instance.AddScore(scoreToAdd);
         anim.Play();
+        PopUp();
     }
 
-    public void Poussée(Rigidbody rb)
+    void PopUp()
+    {
+        GameObject save = Instantiate(ScoreManager.instance.scorePopUpPrefab, transform.GetChild(0).position, Quaternion.identity);
+        ScorePopUp savePop = save.GetComponent<ScorePopUp>();
+        savePop.UpdateScore(scoreToAdd);
+        savePop.StartCoroutine(savePop.Destroyer());
+    }
+
+    public void Push(Rigidbody rb)
     {
         rb.GetComponent<Rigidbody>();
         rb.AddForce(transform.up*strength, ForceMode.Acceleration);
