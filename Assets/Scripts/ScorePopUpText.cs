@@ -15,7 +15,7 @@ public class ScorePopUp : MonoBehaviour
 
 	public IEnumerator Destroyer()
 	{
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(0.6f);
 		Destroy(gameObject);
 	}
 }

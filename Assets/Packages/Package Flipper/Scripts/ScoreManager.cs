@@ -7,6 +7,8 @@ public class ScoreManager : MonoBehaviour
     public        TextMeshProUGUI scoreText;
     public        float           score;
     public        GameObject      scorePopUpPrefab;
+    public        TextMeshProUGUI scoreGameOverText;
+
 
     void Awake()
     {
@@ -33,6 +35,7 @@ public class ScoreManager : MonoBehaviour
     void RefreshText()
     {
         scoreText.text = "Score: " +  score;
+        scoreGameOverText.text = "Score final: " + score;
     }
    
 }

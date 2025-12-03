@@ -6,7 +6,6 @@ public class DeathZone : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other)
 	{
-		//Debug.Log(other.gameObject.name);
 		gameManager.LoseBall(other.gameObject);
 	}
 }

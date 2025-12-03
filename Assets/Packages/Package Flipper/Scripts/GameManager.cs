@@ -1,15 +1,20 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	public static GameManager instance;
-	[SerializeField] int        ballCount = 3;
-	public           GameObject ballPrefab;
-	public           Transform  spawner;
-	public           KeyCode    menuKey = KeyCode.Escape;
-	public           bool       isMenuOpen;
-	public           GameObject menuGO;
+	public static    GameManager     instance;
+	[SerializeField] int             ballCount = 3;
+	public           GameObject      ballPrefab;
+	public           Transform       spawner;
+	public           KeyCode         menuKey = KeyCode.Escape;
+	public           bool            isMenuOpen;
+	public           GameObject      mainMenu;
+	public           GameObject      gameOverMenu;
+	public           GameObject      startMenu;
+	public           bool            isStartMenuOpen;
+	public           TextMeshProUGUI lifeCountText;
 
 	void Awake()
 	{
@@ -27,17 +32,20 @@ public class GameManager : MonoBehaviour
 	public void Start()
 	{
 		CreateBall();
+		lifeCountText.text = "Lives left: " + ballCount;
+		Time.timeScale = 0;
 	}
 
 	public void LoseBall(GameObject ball)
 	{
-		ballCount = ballCount - 1;
-
+		ballCount          = ballCount      - 1;
+		lifeCountText.text = "Lives left: " + ballCount;
+		
 		Destroy(ball);
 
 		if (ballCount < 0)
 		{
-			Debug.Log("Game Over");
+			gameOverMenu.SetActive(true);
 		}
 		else
 		{
@@ -62,9 +70,25 @@ public class GameManager : MonoBehaviour
 	{
 		isMenuOpen = !isMenuOpen;
 
-		menuGO.SetActive(isMenuOpen);
+		mainMenu.SetActive(isMenuOpen);
 
 		if (isMenuOpen)
+		{
+			Time.timeScale = 0;
+		}
+		else
+		{
+			Time.timeScale = 1;
+		}
+	}
+	
+	public void ChangeStartMenuState()
+	{
+		isStartMenuOpen = !isStartMenuOpen;
+
+		startMenu.SetActive(isStartMenuOpen);
+
+		if (isStartMenuOpen)
 		{
 			Time.timeScale = 0;
 		}

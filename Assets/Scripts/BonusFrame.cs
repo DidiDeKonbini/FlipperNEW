@@ -17,7 +17,7 @@ public class BunusFrame : MonoBehaviour
     {
         GameObject save = Instantiate(ScoreManager.instance.scorePopUpPrefab, transform.position, Quaternion.identity);
         save.GetComponent<ScorePopUp>().UpdateScore(scoreToAdd);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.6f);
         Destroy(save);
     }
 }
