@@ -3,15 +3,18 @@ using UnityEngine;
 
 public class Accelerator : MonoBehaviour
 {
-    public           float     strength   = 100f;
-    public           int       scoreToAdd = 4;
-    [SerializeField] Animation anim;
+    public           float       strength   = 100f;
+    public           int         scoreToAdd = 4;
+    [SerializeField] Animation   anim;
+    public           AudioSource audioSource;
+
     void OnTriggerEnter(Collider other)
     {
         Push(other.attachedRigidbody);
         ScoreManager.instance.AddScore(scoreToAdd);
         anim.Play();
         PopUp();
+        audioSource.Play();
     }
 
     void PopUp()

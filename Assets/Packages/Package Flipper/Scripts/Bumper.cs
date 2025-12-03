@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class Bumper : MonoBehaviour
 {
-	public float strength   = 1;
-	public int   scoreToAdd = 10;
-	public Animation anim;
+	public float       strength   = 1;
+	public int         scoreToAdd = 10;
+	public Animation   anim;
+	public AudioSource audioSource;
 
 	void OnCollisionEnter(Collision other)
 	{
@@ -14,6 +15,7 @@ public class Bumper : MonoBehaviour
 
 		ScoreManager.instance.AddScore(scoreToAdd);
 		anim.Play();
+		audioSource.Play();
 		StartCoroutine(popUp());
 	}
 

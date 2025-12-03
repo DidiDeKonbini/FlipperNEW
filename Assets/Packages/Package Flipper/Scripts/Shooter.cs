@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-  public float     decal;
-  public float     accel;
-  public float     loadingSpeed = 1;
-  public KeyCode   key          = KeyCode.Space;
-  public Rigidbody rb;
+  public float       decal;
+  public float       accel;
+  public float       loadingSpeed = 1;
+  public KeyCode     key          = KeyCode.Space;
+  public Rigidbody   rb;
 
 
   public bool keyUp;

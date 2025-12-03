@@ -9,7 +9,6 @@ public class ScorePopUp : MonoBehaviour
 
 	public void UpdateScore(int bumperScore)
 	{
-		anim.Play("ScorePopUp");
 		scoreText.text = bumperScore.ToString();
 	}
 
